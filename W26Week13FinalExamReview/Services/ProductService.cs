@@ -32,7 +32,7 @@ namespace W26Week13FinalExamReview.Services
             return await products.ToListAsync();
         }
 
-        public async Task<List<Product>> GetProductsByCategory(int catId)
+        public async Task<List<Product>> GetProductsByCategoryAsync(int catId)
         {
             var products = _context.Products
                                    .Include(p => p.Category)
