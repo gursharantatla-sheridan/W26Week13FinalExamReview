@@ -1,10 +1,16 @@
+using Microsoft.EntityFrameworkCore;
 using W26Week13FinalExamReview.Components;
+using W26Week13FinalExamReview.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+// register the context class
+string connStr = builder.Configuration.GetConnectionString("DefaultConnection") ?? "";
+builder.Services.AddDbContext<ProductContext>(options => options.UseSqlServer(connStr));
 
 var app = builder.Build();
 
