@@ -103,3 +103,8 @@
         overflow-y: auto;
     }
 }
+
+.nav-menu {
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+}
